@@ -18,7 +18,6 @@ load_dotenv()
 
 MONGO_DB_URL=os.getenv("MONGO_DB_URL")
 
-
 class DataIngestion:
     def __init__(self,data_ingestion_config:DataIngestionConfig):
         try:
@@ -96,6 +95,6 @@ class DataIngestion:
             dataingestionartifact=DataIngestionArtifact(trained_file_path=self.data_ingestion_config.training_file_path,
                                                         test_file_path=self.data_ingestion_config.testing_file_path)
             return dataingestionartifact
-
+        
         except Exception as e:
             raise NetworkSecurityException
